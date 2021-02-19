@@ -1,0 +1,15 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-11-21 15:47:48 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:47:48 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:47:48 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:47:55 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:47:56 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:48:06 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:48:11 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:48:18 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:48:42 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:48:42 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:48:43 --> 404 Page Not Found --> assets
+ERROR - 2017-11-21 15:49:48 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74
+ERROR - 2017-11-21 15:52:21 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /home/akmf4183/public_html/dbl/system/database/drivers/mysql/mysql_driver.php 74

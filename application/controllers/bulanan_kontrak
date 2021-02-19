@@ -1,0 +1,90 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+//error_reporting(0);
+class Bulanan_kontrak extends CI_Controller {
+
+	function __construct()
+	{
+		parent::__construct();
+	//	$this->load->library(array('PHPExcel','PHPExcel/IOFactory'));
+	}
+	
+	function proses_lap_upah_bulanan_kontrak()
+	{
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+
+		//hapus data di table t_rekap_lembur_bulanan
+		$this->db->query("truncate t_rekap_upah_bulanan_tetap");
+
+		//ambil seksi dari tabel karyawan
+		$sql = "select distinct seksi from t_karyawan where tkaryawan='B' and skerja='K' and saktif='1'";
+		$dataseksi = $this->db->query($sql)->result_array();
+
+		//mencari karyawan sesuai seksi
+		foreach($dataseksi as $d)
+		{
+			$seksi = $d['seksi'];
+			$upah1 = '';
+			$premi1 = '';
+			$absensi1 = '';
+			$bpjs_tk1 = '';
+			$bpjs_kes1 = '';
+			$pot_t3m1 	= '';
+			$spsi1 = '';
+			$koperasi1 = '';
+			$sql = "select * from t_karyawan where seksi = '$seksi' and tkaryawan ='B' and skerja='K' and saktif='1'";
+			$karyawan = $this->db->query($sql)->result_array();
+			foreach($karyawan as $b)
+			{
+				$noinduk = $b['noinduk'];
+
+				//mencari jumlah lembur per karyawan dari table t_gaji_bulanan
+				$sql = "select (gp + tjab + tmakan + t3m) as upah,premi,pot_absen,(jht + pensiun) as bpjs_tk,bpjs_kes,pot_t3m,spsi,koperasi from t_gaji_bulanan where noinduk='$noinduk' and bulan='$bulan' and tahun='$tahun'";
+				$jumlah = $this->db->query($sql)->result_array();
+				$upah = $jumlah[0]['upah'];
+				$premi = $jumlah[0]['premi'];
+				$absensi = $jumlah[0]['absensi'];
+				$bpjs_tk = $jumlah[0]['bpjs_tk'];
+				$bpjs_kes = $jumlah[0]['bpjs_kes'];
+				$pot_t3m = $jumlah[0]['pot_t3m'];
+				$spsi = $jumlah[0]['spsi'];
+				$koperasi = $jumlah[0]['koperasi'];
+
+				$upah1 		+= $upah;
+				$premi1 	+= $premi;
+				$absensi1 	+= $absensi;
+				$bpjs_tk11 	+= $bpjs_tk;
+				$bpjs_kes1	+= $bpjs_kes;
+				$pot_t3m1  	+= $pot_t3m;
+				$spsi1		+= $spsi;
+				$koperasi1	+= $koperasi;
+
+			}
+
+			$insert = $this->db->query("insert into t_rekap_upah_bulanan_kontrak(bulan,tahun,seksi,upah,premi,pot_lain,absensi,bpjs_tk,bpjs_kes,spsi,koperasi)values('$bulan','$tahun','$seksi','$upah1','$premi1','$pot_t3m1','$absensi1','$bpjs_tk1','$bpjs_kes1','$spsi1','$koperasi1')");
+			
+			$hasil['pesan'] = 'Proses Berhasil';
+			
+		}
+		echo json_encode($hasil);
+
+		
+	}
+
+
+
+	//ambil data
+	function ambil_rekap_upah_bulanan_kontrak()
+	{
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$hasil = $this->db->query("select * from t_rekap_upah_bulanan_kontrak where  bulan='$bulan' and tahun='$tahun'")->result_array();
+		$data = array (
+			'data' => $hasil,
+			'bulan' => $bulan,
+			'tahun' => $tahun
+		);
+		$this->load->view('upah/bulanan/laporan/kontrak/view/view_rekap_upah_bulanan_kontrak',$data);
+	}
+	
+}/* End of file bulanan.php */
