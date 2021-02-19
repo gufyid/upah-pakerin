@@ -9,7 +9,7 @@
     <script src="<?php echo base_url(); ?>./asset/js/jquery-2.1.4.min.js"></script>
     <style>
         .modal {
-            height: 600px;
+            height: 650px;
         }
 
         .kiri {
