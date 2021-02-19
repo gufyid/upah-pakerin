@@ -53,7 +53,7 @@ $autoload['packages'] = array();
 */
 
 //$autoload['libraries'] = array('database','pagination','excell','mobile','session','encrypt');
-$autoload['libraries'] = array('database', 'pagination', 'session', 'encrypt', 'uri', 'excell');
+$autoload['libraries'] = array('database', 'pagination', 'session', 'uri', 'excell');
 
 /*
 | -------------------------------------------------------------------
